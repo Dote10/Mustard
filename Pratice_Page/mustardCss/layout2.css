@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+
+.s1 ul{
+	display:flex;
+	flex-direction:row;
+	background:gray;
+}
+
+
+.s1 li:nth-child(1){
+	background:red;
+	flex-basis:100px;
+}
+
+.s1 li:nth-child(2){
+	background:green;
+}
+
+
+.s1 li:nth-child(3){
+	background:blue;
+}
+
+.s1 li:nth-child(4){
+	background:yellow;
+}
+
+.s1 li:nth-child(5){
+	background:lightblue;
+}
+
+

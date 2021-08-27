@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet"
+	href="mustardCss/mustard3.css">
+
+</head>
+<body>
+<h2><a href="index.html">Mustard Sauce </a></h2>
+	<nav>
+	<div id="list">
+		<ul>
+			<li> <a href="mustard1.html">What a Mustard</a></li>
+			<li> <a href="mustard2.html">Kind of Mustard</a></li>
+			<li><a href="mustard3.html">Food of Mustard</a></li>
+			<li><a href="mustard4.html">Recipe</a></li>
+			<li><a href="mustard5.html">Post</a></li>
+		</ul>
+	</div>
+	</nav>
+	
+<hr>
+	<section id="sect">
+		<header>
+			<h3>머스타드 소스가 들어간 음식을 그려보세요</h3>
+			<img style="padding-left: 228px;" alt="" src="media/small.png">
+		</header>
+		<article>
+			<div style="float:right; margin-right: 100px;">
+			<span>색상:</span>
+			<input id="col" type=color >
+			<span>선 굵기:</span>
+			<input id="lin" type="number" min="0.5" max="50.0"
+			step="0.5" >
+			</div>
+			<br> <br> <br>
+			<canvas id="myCanvas" style="background-color:#ffe680" width="900" height="600">
+			</canvas>
+		</article>
+	</section>
+	
+	<script type="text/javascript">
+		
+	var canvas =document.getElementById("myCanvas");
+	var context=canvas.getContext("2d");
+	
+	
+	
+
+	
+	canvas.addEventListener("mousemove",function(e){move(e)},false)
+	canvas.addEventListener("mousedown",function(e){down(e)},false)
+	canvas.addEventListener("mouseup",function(e){up(e)},false)
+	canvas.addEventListener("mousemout",function(e){out(e)},false)
+	
+	var startX=0,startY=0;
+	var dragging=false;
+	function draw(curX,curY){
+		context.beginPath();
+		context.moveTo(startX,startY);
+		context.lineTo(curX,curY);
+		context.stroke();
+		
+	}
+	
+	var lineColor;
+	var line;
+	function down(e){
+		lineColor=document.getElementById("col").value;
+		line=document.getElementById("lin").value;
+		
+
+		context.lineWidth=line;
+		context.strokeStyle=lineColor;
+	
+		
+		startX=e.offsetX; startY=e.offsetY; dragging=true;
+		
+		
+	}
+	
+	function up(e){dragging=false;}
+	
+	function move(e){
+		if(!dragging)return;
+		var curX=e.offsetX, curY=e.offsetY;
+		draw(curX,curY);
+		startX=curX; startY=curY;
+		
+	}
+	
+	function out(e){dragging=false;}
+	</script>
+	<footer>
+	Copyright2021.tonnerre10.refer to Stars Inside.
+	</footer>
+</body>
+</html>

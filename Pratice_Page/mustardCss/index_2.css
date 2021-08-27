@@ -1,0 +1,71 @@
+@charset "UTF-8";
+div{
+	display:inline-block;
+}
+
+
+
+h2{
+	text-align:center;
+}
+
+
+ul{
+	text-align:center;
+}
+
+li{
+	list-style:none;
+	float:left;
+	padding: 30px;
+	text-align:center;
+}
+
+
+#list{
+
+	display:inline-block;
+	text-align:center;
+	padding-left:518px;
+	
+	}
+
+@media (max-width:1300px){
+	 #list{
+	 	padding-left:50px;
+	 	
+	 }
+	 
+}
+
+a{
+	text-decoration:none;
+	color:black;
+}
+
+#main{
+
+		
+		width:500px;
+		height:500px;
+		
+}
+#second{
+	width:364px;
+	height:500px;
+}
+
+#maindiv{
+	display:inline-block;
+	position:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+	align-items:center;
+	
+	
+    
+}
+
+
+	 
